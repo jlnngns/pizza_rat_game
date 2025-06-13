@@ -1,5 +1,6 @@
 import pygame
 from game import Game
+from button import Button
 
 pygame.init()
 screen = pygame.display.set_mode((800, 600))
@@ -7,8 +8,7 @@ pygame.display.set_caption("Pizza Rat")
 clock = pygame.time.Clock()
 
 font = pygame.font.Font(None, 60)
-start_text = font.render("Click to Start", True, (255, 255, 255))
-text_rect = start_text.get_rect(center=(400, 300))
+start_button = Button("Click to Start", (250, 260), (300, 80), font, (50, 150, 255), (255, 255, 255))
 
 game = Game()
 running = True
@@ -22,7 +22,7 @@ while running:
             running = False
         
         if not game_started:
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if start_button.is_clicked(event):
                 game_started = True
         else:
             game.handle_events(event)
