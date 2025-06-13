@@ -61,7 +61,7 @@ class Game:
         text = font.render("Time's Up! Click to Return", True, (255, 255, 255))
         self.screen.blit(text, text.get_rect(center=(400, 300)))
 
-    def draw(self):
+    def draw(self, screen):
         self.screen.blit(self.bg_image, (0, 0))
         if self.state == "TITLE":
             self.draw_title_screen()
