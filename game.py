@@ -6,7 +6,7 @@ class game:
     def __init__(self, screen_width=800, screen_height=600):
         pygame.init()
         pygame.display.set_caption("Pizza Rat")
-        self.screen = pygame.display.set_mode((screen_widht, screen_height))
+        self.screen = pygame.display.set_mode((screen_width, screen_height))
         self.clock = pygame.time.Clock()
         self.running = True
         self.state = "TITLE"   # TITLE, PLAYING, GAME_OVER
@@ -41,15 +41,11 @@ class game:
                         self.ui.update_score()
                         self.rat.move_randomly()
                         self.click_sound.play()
-                elif state.state == "GAME OVER":
+                elif self.state == "GAME OVER":
                     self.state = "TITLE"
 
-    def update(self, delta_time):
-        if self.state == "PLAYING":
-            self.ui.update_timer(delta.time)
-            if self.ui.time_left <= 0:
-                self.state = "GAME_OVER"
-            self.rat.update_idle()
+    def update(self, delta):
+        self.rat.update(delta)
 
     def draw_title_screen(self):
         font_big = pygame.font.Font(None, 64)
