@@ -2,7 +2,7 @@ import pygame
 from rat import Rat
 from ui import UI
 
-class game:
+class Game:
     def __init__(self, screen_width=800, screen_height=600):
         pygame.init()
         pygame.display.set_caption("Pizza Rat")
