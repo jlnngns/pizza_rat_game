@@ -20,7 +20,7 @@ class Game:
         self.click_sound = pygame.mixer.Sound("assets/click.wav")
 
         # Game Elements
-        self.rat = Rat("assests/rat_idle.png", "assests/rat_move.png", screen_width, screen_height)
+        self.rat = Rat("assets/rat_idle.png", "assets/rat_move.png", screen_width, screen_height)
         self.rat_group = pygame.sprite.GroupSingle(self.rat)
         self.ui = UI()
 
