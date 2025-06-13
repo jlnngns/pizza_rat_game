@@ -29,7 +29,7 @@ class Game:
         self.rat.move_randomly()
         self.state = "PLAYING"
 
-    def handle_events(self):
+    def handle_events(self, event):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
