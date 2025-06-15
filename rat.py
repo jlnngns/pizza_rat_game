@@ -14,8 +14,8 @@ class Rat(pygame.sprite.Sprite):
         self.last_switch = 0
 
     def move_randomly(self):
-        self.rect.x = random.randint(50, self.screen_width - 50)
-        self.rect.y = random.randint(100, self.screen_height - 100)
+        self.rect.x = random.randint(0, self.screen_width - 0)
+        self.rect.y = random.randint(0, self.screen_height - 0)
 
     def is_clicked(self, pos):
         return self.rect.collidepoint(pos)

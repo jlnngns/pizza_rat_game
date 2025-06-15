@@ -3,7 +3,7 @@ from game import Game
 from button import Button
 
 pygame.init()
-screen = pygame.display.set_mode((800, 600))
+screen = pygame.display.set_mode((700, 400))
 pygame.display.set_caption("Pizza Rat")
 clock = pygame.time.Clock()
 
@@ -28,7 +28,7 @@ while running:
             game.handle_events(event)
 
     game.update(delta)
-    game.draw(screen)
+    game.draw()
 
     pygame.display.flip()
 pygame.quit()
